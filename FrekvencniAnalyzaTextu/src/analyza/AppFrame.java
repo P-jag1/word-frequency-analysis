@@ -31,7 +31,7 @@ public class AppFrame extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JTable table;
-	private Soubor list = new Soubor();
+	private FileC list = new FileC();
 	private FileModel model = new FileModel(list);
 	private Action actOpen, actSave, actEnd;
 	private JFileChooser chooser;

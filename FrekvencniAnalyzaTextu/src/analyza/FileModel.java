@@ -4,9 +4,9 @@ import javax.swing.table.AbstractTableModel;
 
 public class FileModel extends AbstractTableModel {
 	
-	private Soubor list = null;
+	private FileC list = null;
 	
-	public FileModel(Soubor list){
+	public FileModel(FileC list){
 		this.list = list;
 	}
 	

@@ -4,10 +4,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
-public class Soubor extends Vector{
+public class FileC extends Vector{
 	
-	public Soubor FindWord(String s, int k) {
-		Soubor vysledek = new Soubor();
+	public FileC FindWord(String s, int k) {
+		FileC vysledek = new FileC();
 		String n;
 		int i;
 		s = s.toUpperCase();
