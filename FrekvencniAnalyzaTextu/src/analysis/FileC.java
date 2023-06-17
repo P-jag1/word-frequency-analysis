@@ -1,4 +1,4 @@
-package analyza;
+package analysis;
 
 import java.util.Collections;
 import java.util.Comparator;

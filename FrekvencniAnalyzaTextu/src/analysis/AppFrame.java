@@ -1,4 +1,4 @@
-package analyza;
+package analysis;
 
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;

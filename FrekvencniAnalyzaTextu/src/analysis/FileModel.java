@@ -1,4 +1,4 @@
-package analyza;
+package analysis;
 
 import javax.swing.table.AbstractTableModel;
 
