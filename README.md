@@ -1,4 +1,4 @@
-# Word frequency analysis
+# Word frequency analysis :memo:
 
 - Analyzes the occurrence of individual words in a text file.
 
