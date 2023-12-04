@@ -1,4 +1,4 @@
-package analysis;
+analysis;
 
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
@@ -115,6 +115,7 @@ public class AppFrame extends JFrame {
 
 		tb.add(actOpen);
 		tb.add(actSave);
+		tb.add(actEnd);
 
 		return tb;
 	}
@@ -130,6 +131,7 @@ public class AppFrame extends JFrame {
 	@SuppressWarnings("unchecked")
 	private void openFile() {
 		if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+			list.clear();
 			WordC soub = null;
 			String words = "";
 			String row;
