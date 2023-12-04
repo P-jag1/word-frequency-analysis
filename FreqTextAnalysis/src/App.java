@@ -115,33 +115,25 @@ public class App extends JFrame{
 				BufferedReader br = new BufferedReader(new FileReader(chooser
 						.getSelectedFile().getAbsolutePath()));
 
-				while ((radek = br.readLine()) != null) { // na鑼e v啼chny dky
-															// do slova
-					slova += radek.trim(); // vyma枡 v啼chny b匀� znaky na
-											// za鞦tku a konci v�ty
+				while ((radek = br.readLine()) != null) { // nacte vsechny radky
+															
+					slova += radek.trim();
 				}
-				slova = slova.replace(",", ""); // odstrani v啼chen v�skyt
-												// dan馼o znaku
+				
+				slova = slova.replace(",", "");
 				slova = slova.replace(".", "");
 				slova = slova.replace("?", "");
 				slova = slova.replace("!", "");
 				slova = slova.replace("\t", "");
-				String[] casti = slova.split(" "); // rozd�l� po meze do pole
-													// casti
+				String[] casti = slova.split(" "); //inicializace pole
 
-				Set<String> s1 = new LinkedHashSet<String>(); // vyvo hashmapu
-																// ta
-																// automaticky
-																// odebere
-																// duplicity
-				for (int i = 0; i < casti.length; i++) { // do hashmapy s1 vlo橲
-															// obsah pole casti
+				Set<String> s1 = new LinkedHashSet<String>();
+																
+				for (int i = 0; i < casti.length; i++) { //naplneni hashsetu
 					s1.add(casti[i]);
 				}
 
-				for (String string : s1) { // spo竟ta po鐺t duplicit podle
-											// pole(zde jsou) a hashmapy(v n�
-											// ji� nejsou)
+				for (String string : s1) { //spočitá počet duplicit (hashset vs pole)
 					int pocet = 0;
 
 					for (int i = 0; i < casti.length; i++) {
@@ -149,18 +141,16 @@ public class App extends JFrame{
 							pocet++;
 						}
 					}
-					double p = ((double) (pocet) / (double) (casti.length)) * 100; // spo竟t疣�
-																					// procentu疝n劜o
-																					// obsahu
-																					// slov
+					double p = ((double) (pocet) / (double) (casti.length)) * 100; // procentualni vyskyt slov
+																					
 					p = Math.round(p * 100);
 					p = p / 100;
 
 					soub = new Slovo(string, pocet, p);
-					seznam.pridejSlovo(soub); // pd� do seznamu nov� slovo
+					seznam.pridejSlovo(soub); // pridame do seznamu nove slovo
 				}
 
-				br.close(); // uzav bufferdreader
+				br.close();
 			} catch (FileNotFoundException e) {
 				vypisZpravu(this, "Soubor "
 						+ chooser.getSelectedFile().getName() + " neexistuje!");
@@ -177,7 +167,7 @@ public class App extends JFrame{
 		try (PrintWriter pw = new PrintWriter(new FileWriter(chooser
 				.getSelectedFile().getAbsolutePath()))) {
 			
-			// postupne ukladame m﨎ta (1 radek = 1 misto)
+			// postupne ukladame místa (1 radek = 1 misto)
 			for (int i = 0; i<seznam.getSlovoCount();i++) {
 				pw.println(seznam.getSlovoByIndex(i).getSlovo() + ";" + seznam.getSlovoByIndex(i).getPocetVys() + ";"
 							+ seznam.getSlovoByIndex(i).getProcentoVys());
